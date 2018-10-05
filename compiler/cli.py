@@ -84,6 +84,12 @@ def make_command_line_parser():
         'directory at the start of execution.',
         type=bool_from_string,
         required=True)
+    parser.add_argument(
+        '--no_remove',
+        help='Keep extracted files after program finishes if --zip_safe is ' +
+        'enabled.',
+        type=bool_from_string,
+        required=True)
     return parser
 
 
@@ -147,5 +153,6 @@ def main(argv):
         manifest_root=args.manifest_root,
         timestamp=args.timestamp,
         zip_safe=args.zip_safe,
+        no_remove=args.no_remove,
     )
     par.create()

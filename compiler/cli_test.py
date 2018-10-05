@@ -38,6 +38,7 @@ class CliTest(unittest.TestCase):
             '--outputpar=baz',
             '--stub_file=quux',
             '--zip_safe=False',
+            '--no_remove=False',
             'foo',
         ])
         self.assertEqual(args.manifest_file, 'bar')
